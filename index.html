@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Peligro Operacional CTAM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="ipo">
+        <div id="welcomescreen" class="welcomescreen">
+            <h1 class="ipo__maintitle">Bienvenido a<br/>IPO-CTAM</h1>
+            <label for="userInput">Callsign Informante:</label>
+            <input type="text" name="userInput" id="userInput"/>
+            <button id="welcome_btn" class="ipo__btn">Ok</button>
+        </div>
+
+        <div id="questionscreen" class="questionscreen">
+            
+        </div>
+        
+        <div id="resultscreen" class="resultscreen">
+            <p class="ipo__description"><span id="correctAnswers">X</span></p>
+        </div>
+
+        <div id="restartscreen" class="restartscreen">
+            <button id="restart_btn" class="ipo__btn">Comenzar</button>
+        </div>
+
+        <div id="optionscreen" class="optionscreen">
+            <button id="data_btn" class="ipo__btn">Visualizar DATA</button>
+        </div>
+
+        <div id="tablescreen" class="tablescreen">
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Informante</th>
+                        <th colspan="10">DATA</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
