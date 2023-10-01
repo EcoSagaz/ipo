@@ -44,14 +44,13 @@ function Ipo() {
             hiddenAllScreens()
             elOptionScreen.classList.remove("hidden")
             elRestartScreen.classList.remove("hidden")
-    
             registers.push(user)
             console.log("Registers: "+JSON.stringify(registers))
         }
     }
 }
 
-function Question(id,title, answers, type, nextQuestions) {
+function Question(id,title,answers,type,nextQuestions) {
     this.id = id
     this.title = title
     this.answers = answers
@@ -81,21 +80,16 @@ function Question(id,title, answers, type, nextQuestions) {
         
         let questionAnswers = document.createElement("ul")
         questionAnswers.classList.add("question__awswers")
-    
         this.answers.forEach((answer, index) => {
             let elAnswer = document.createElement("li")
             elAnswer.classList.add("awswer")
             elAnswer.textContent = answer
-            elAnswer.id = index
-            
+            elAnswer.id = index 
             elAnswer.addEventListener("click", this.checkAnswer)
             questionAnswers.append(elAnswer)
-        })
-        
+        })       
         elQuestionScreen.append(questionAnswers)
-        
     }
-    
     
     this.checkAnswer = (event) => {
         let anwserSelected = event.target
