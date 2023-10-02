@@ -49,6 +49,11 @@
     display: none;
 }
 
+.questionscreen textarea {
+    width: 90%;
+    height: 250px;
+}
+
 .hidden {
     display: none;
 }

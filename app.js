@@ -80,6 +80,18 @@ function Question(id,title,answers,type,nextQuestions) {
         
         let questionAnswers = document.createElement("ul")
         questionAnswers.classList.add("question__awswers")
+        console.log(type)
+        if (type == 'Texto1'){
+            var cuadro = document.createElement("textarea")
+            var fechasit = document.createElement("input")
+            fechasit.type = "date"
+            questionAnswers.append(fechasit)
+            questionAnswers.append(cuadro)
+        }
+        if (type == 'Texto2'){
+            var cuadro = document.createElement("textarea")
+            questionAnswers.append(cuadro)
+        }
         this.answers.forEach((answer, index) => {
             let elAnswer = document.createElement("li")
             elAnswer.classList.add("awswer")
@@ -110,13 +122,13 @@ function Question(id,title,answers,type,nextQuestions) {
 
 function addQuestions(q){
     let question0 = new Question(0,'IDENTIFICACION : Seleccione ámbito del Reporte', ['Humano','Organizacional','Operacional','Mantenimiento','Ambiental'],'Boton',[1,1,1,1,1])
-    let question1 = new Question(1,'TIPO DE SUCESO : Seleccione suceso a informar', ['Accidente','Incidente','Riesgo','Falla de Procedimientos','Ausencia de Servicio'], 'Boton',[3,3,2,3,3])
+    let question1 = new Question(1,'TIPO DE SUCESO : Seleccione suceso a informar', ['Accidente','Incidente','Riesgo','Falla de Procedimientos','Ausencia de Servicio'], 'Boton',[2,2,2,2,2])
     let question2 = new Question(2,'PROBABILIDAD', ['1-Extremadamente Improbable','2-Improbable','3-Remoto','4-Ocasional','5-Frecuente'], 'Boton',[3,3,3,3,3])
     let question3 = new Question(3,'SEVERIDAD', ['A-Catastrófico','B-Peligroso','C-Mayor','D-Menor','E-Insignificante'], 'Boton',[4,4,4,4,4])
     let question4 = new Question(4,'FACTORES CONTRIBUYENTES : Seleccione Factor Contribuyente', ['Norma/Procedimientos','Condición Fisiológica','Equipamiento','COMM','Ergonomía'], 'Boton', [5,5,5,5,5])
     let question5 = new Question(5,'LUGAR', ['Acceso', 'Sala de Control','Servicios Básicos','Entorno'], 'Boton',[6,6,6,6])
-    let question6 = new Question(6,'SITUACIÓN',['Continuar'],'Texto1',[7,7])
-    let question7 = new Question(7,'RECOMENDACIONES', ['Continuar'], 'Texto2',[8,8])
+    let question6 = new Question(6,'SITUACIÓN : Describa la situación indicando la fecha del suceso. Recuerde NO entregar Nombres',['Continuar'],'Texto1',[7,7])
+    let question7 = new Question(7,'RECOMENDACIONES : Indicar propuestas conforme a TREES', ['Continuar'], 'Texto2',[8,8])
     let question8 = new Question(8,'Considerando el tiempo usado, ¿Cómo evalúas?', ['Insuficiente','Suficiente','Bueno','Muy Bueno'],'Boton',[9,9,9,9])
     let question9 = new Question(9,'¡¡Hemos Terminado!! Gracias por tu compromiso con la Seguridad Operacional', ['Finalizar'],'Boton',[-1])
     q.addQuestion(question0)
